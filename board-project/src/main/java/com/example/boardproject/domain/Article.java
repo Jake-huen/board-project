@@ -10,7 +10,9 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.LinkedHashSet;
 import java.util.Objects;
+import java.util.Set;
 
 //Field 구성
 @Getter
@@ -33,11 +35,18 @@ public class Article {
 
     @Setter private String hashtag; // 해시태그
 
+    // One to many 관계 : Article, ArticleComment
+    @ToString.Exclude
+    @OrderBy("id")
+    @OneToMany(mappedBy = "article",cascade = CascadeType.ALL)
+    private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
+    // meta data
     @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; // 생성일시
     @CreatedBy @Column(nullable = false,length = 100) private String createdBy; // 생성자
     @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; // 수정일시
     @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
+
 
     // 모든 JPA entity들은 hibernate 구현체를 사용하는 기준으로
     // 설명될 때 기본 생성자가 있어야 한다.
