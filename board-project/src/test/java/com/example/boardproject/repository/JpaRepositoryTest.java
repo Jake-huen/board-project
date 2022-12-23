@@ -39,11 +39,11 @@ class JpaRepositoryTest {
 
         // When
         List<Article> articles = articleRepository.findAll();
-        // Then
 
+        // Then
         assertThat(articles)
                 .isNotNull()
-                .hasSize(0);
+                .hasSize(13);
     }
 
     @DisplayName("insert 테스트")
@@ -92,7 +92,7 @@ class JpaRepositoryTest {
         articleRepository.delete(article);
 
         // Then
-        assertThat(articleRepository.count()).isEqualTo(previousArticleComment-1);
+        assertThat(articleRepository.count()).isEqualTo(previousArticleCount-1);
         assertThat(articleCommentRepository.count()).isEqualTo(previousArticleComment-deletedCommentSize); // commentSize는 몇개일지 모르니까
 
     }
