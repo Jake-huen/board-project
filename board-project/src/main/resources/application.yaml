@@ -30,7 +30,10 @@ spring:
   sql:
     init:
       mode: always
-
+  data:
+    rest:
+      base-path: /api
+      detection-strategy: annotated
 ---
 
 spring:
@@ -44,6 +47,5 @@ spring:
     init:
       mode: always
   test.database.replace: none
-
 
 
