@@ -33,6 +33,7 @@ insert into article (title, content, hashtag, created_by, modified_by, created_a
 
 
 -- 300 댓글
--- insert into article_comment (article_id, content, created_at, modified_at, created_by, modified_by) values
---                              (19144234000000, 'Quisque idNulla dapibeugiat et, eros.', '2021-03-02 22:40:04', '2021-04-27 15:38:09', 'Lind', 'Orv')
--- ;
+insert into article_comment (article_id, content, created_at, modified_at, created_by, modified_by) values
+                             (1, 'Quisque idNulla dapibeugiat et, eros.', '2021-03-02 22:40:04', '2021-04-27 15:38:09', 'Lind', 'Orv'),
+                             (2, '안녕하세요','2022-12-23 14:18:00','2022-12-23 14:18:00','김태헌','김태헌')
+;

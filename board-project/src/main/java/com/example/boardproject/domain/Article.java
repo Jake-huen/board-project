@@ -30,7 +30,7 @@ public class Article extends AuditingFields{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @Column(nullable=false) private String title; // 제목
+    @Setter @Column(nullable = false) private String title; // 제목
     @Setter @Column(nullable = false) private String content; // 본문
     @Setter private String hashtag; // 해시태그
 
@@ -57,7 +57,6 @@ public class Article extends AuditingFields{
 
     // Equals와 hashCode를 lombok으로도 구현할 수 있다.
     // but, Entity에서는 독특한 방법으로 해야 한다.
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
