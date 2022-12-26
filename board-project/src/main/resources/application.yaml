@@ -47,5 +47,7 @@ spring:
     init:
       mode: always
   test.database.replace: none
+  thymeleaf3:
+      decoupled-logic: true
 
 
