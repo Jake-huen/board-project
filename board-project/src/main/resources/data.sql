@@ -1,4 +1,7 @@
-
+-- 테스트 계정
+insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
+                    ('Taeheon','rlaxogjs8312','너굴맨','tae77777@naver.com','반갑습니다.',now(),'taeheon',now(),'taeheon')
+;
 
 
 -- 13 게시글
