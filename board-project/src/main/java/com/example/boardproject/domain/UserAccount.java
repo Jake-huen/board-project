@@ -16,28 +16,40 @@ import java.util.Objects;
         @Index(columnList = "createdBy")
 })
 @Entity
-public class UserAccount extends AuditingFields{
+public class UserAccount extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @Column(nullable = false) private String userId; // 유저 아이디
-    @Setter @Column(nullable = false) private String userPassword; // 비밀번호
+    @Setter
+    @Column(nullable = false)
+    private String userId; // 유저 아이디
+    @Setter
+    @Column(nullable = false)
+    private String userPassword; // 비밀번호
 
-    @Setter @Column(length = 100) private String email; // 이메일
-    @Setter @Column(length = 100) private String nickname; // 닉네임
-    @Setter private String memo; // 메모
+    @Setter
+    @Column(length = 100)
+    private String email; // 이메일
+    @Setter
+    @Column(length = 100)
+    private String nickname; // 닉네임
+    @Setter
+    private String memo; // 메모
 
-    protected UserAccount() {}
-    private UserAccount(String userId, String userPassword, String email, String nickname, String memo){
+    protected UserAccount() {
+    }
+
+    private UserAccount(String userId, String userPassword, String email, String nickname, String memo) {
         this.userId = userId;
         this.userPassword = userPassword;
         this.email = email;
         this.nickname = nickname;
         this.memo = memo;
     }
-    public static UserAccount of(String userId, String userPassword, String email, String nickname, String memo){
+
+    public static UserAccount of(String userId, String userPassword, String email, String nickname, String memo) {
         return new UserAccount(userId, userPassword, email, nickname, memo);
     }
 
@@ -46,7 +58,7 @@ public class UserAccount extends AuditingFields{
         if (this == o) return true;
         if (!(o instanceof UserAccount)) return false;
         UserAccount that = (UserAccount) o;
-        return id!=null && id.equals(that.id);
+        return id != null && id.equals(that.id);
     }
 
     @Override

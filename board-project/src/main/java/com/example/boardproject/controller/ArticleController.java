@@ -14,6 +14,7 @@ public class ArticleController {
     @GetMapping
     public String articles(ModelMap map) {
         map.addAttribute("articles", List.of());
+
         return "articles/index";
     }
 

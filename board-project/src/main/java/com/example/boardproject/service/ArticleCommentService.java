@@ -1,6 +1,5 @@
 package com.example.boardproject.service;
 
-import com.example.boardproject.dto.ArticleCommentUpdateDto;
 import com.example.boardproject.repository.ArticleCommentRepository;
 import com.example.boardproject.repository.ArticleRepository;
 import com.example.boardproject.dto.ArticleCommentDto;
@@ -19,7 +18,7 @@ public class ArticleCommentService {
     private final ArticleCommentRepository articleCommentRepository;
 
     @Transactional(readOnly = true)
-    public List<ArticleCommentDto> searchArticleComment(long articleId) {
+    public List<ArticleCommentDto> searchArticleComments(long articleId) {
         return List.of();
     }
 
@@ -27,11 +26,11 @@ public class ArticleCommentService {
 
     }
 
-    public void updateArticleComment(long articleCommentId, ArticleCommentUpdateDto dto) {
+    public void updateArticleComment(ArticleCommentDto dto) {
 
     }
 
-    public void deleteArticleComment(long articleCommentId) {
+    public void deleteArticleComment(Long articleCommentId) {
 
     }
 }

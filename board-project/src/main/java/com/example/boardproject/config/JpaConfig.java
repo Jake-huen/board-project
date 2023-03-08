@@ -14,6 +14,6 @@ public class JpaConfig {
     // auditing 할 때 사람 이름 정보
     @Bean
     public AuditorAware<String> auditorAware() {
-        return () -> Optional.of("taeheon"); // TODO: 스프링 시큐리티로 인증 기능을 붙이게 될 때, 수정해야 한다.
+        return () -> Optional.of("uno"); // TODO: 스프링 시큐리티로 인증 기능을 붙이게 될 때, 수정해야 한다.
     }
 }
